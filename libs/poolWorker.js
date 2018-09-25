@@ -80,7 +80,7 @@ module.exports = function(logger){
                     break;
                 }
 
-                logger.warn(logSystem, logComponent, logSubCat, 'Proxy message for ' + algo + ' from ' + oldCoin + ' to ' + newCoin);
+                logger.debug(logSystem, logComponent, logSubCat, 'Proxy message for ' + algo + ' from ' + oldCoin + ' to ' + newCoin);
 
                 if (newPool) {
                     oldPool.relinquishMiners(
@@ -213,7 +213,7 @@ module.exports = function(logger){
                 logger.debug(logSystem, logComponent, logSubCat, 'Share accepted at diff ' + data.difficulty + '/' + data.shareDiff + ' by ' + data.worker + ' [' + data.ip + ']' );
 
             else if (!isValidShare)
-                logger.fatal(logSystem, logComponent, logSubCat, 'Share rejected: ' + shareData);
+                logger.debug(logSystem, logComponent, logSubCat, 'Share rejected: ' + shareData);
 
             handlers.share(isValidShare, isValidBlock, data, poolOptions.coin.name, false)
             //loop through auxcoins
@@ -315,7 +315,7 @@ module.exports = function(logger){
                     var f = net.createServer(function(socket) {
                         var currentPool = proxySwitch[switchName].currentPool;
 
-                        logger.warn(logSystem, 'Connect', logSubCat, 'Connection to '
+                        logger.debug(logSystem, 'Connect', logSubCat, 'Connection to '
                             + switchName + ' from '
                             + socket.remoteAddress + ' on '
                             + port + ' routing to ' + currentPool);
@@ -330,7 +330,7 @@ module.exports = function(logger){
                             }, 3000);
 
                     }).listen(parseInt(port), function() {
-                        logger.warn(logSystem, logComponent, logSubCat, 'Switching "' + switchName
+                        logger.debug(logSystem, logComponent, logSubCat, 'Switching "' + switchName
                             + '" listening for ' + algorithm
                             + ' on port ' + port
                             + ' into ' + proxySwitch[switchName].currentPool);
