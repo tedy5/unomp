@@ -54,7 +54,7 @@
         "newrelic": "4.0.0",
         "colors": "1.1.2",
         "node-watch": "0.3.5",
-        "request": "2.87.0",
+        "request": "2.88.0",
         "nonce": "1.0.3",
         "bignum": "0.11.0",
         "extend": "3.0.2"
