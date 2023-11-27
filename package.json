@@ -40,7 +40,7 @@
     },
     "dependencies": {
         "stratum-pool": "git://github.com/tedy5/stratum-pool",
-        "dateformat": "1.0.12",
+        "dateformat": "2.0.0",
 	"log4js": "6.4.0",
 	"bitcoin": "3.0.1",
         "node-json-minify": "1.0.0",
